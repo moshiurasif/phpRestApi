@@ -3,7 +3,7 @@ header("Content-type: application/json");
 header("Access-Control-Allow-Origin: *");
 include "config.php";
 $data = json_decode(file_get_contents("php://input"), true);
-$student_id = $data["sid"];
+$student_id = $data["id"];
 
 $sql = "SELECT * FROM students WHERE id = {$student_id}";
 $result = $conn->query($sql) or die("query failed");
